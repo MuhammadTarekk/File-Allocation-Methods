@@ -18,6 +18,7 @@ public:
     string name;
     int start = rand() % memorySize / 2;
     int data[4];
+    int end = data[4];
     void fillData();
 
 };
@@ -62,7 +63,7 @@ int main()
     do
     {
 
-        cout << "******* Welcome to the File Allocation Program ********\n";
+        cout << "*** Welcome to the File Allocation Program ****\n";
         cout << "MENU:\n\nEnter 1 for Contigiuos File Allocation\n";
         cout << "Enter 2 for Linked File Allocation\n";
         cout << "Enter 3 for Indexed File Allocation\n";
@@ -104,7 +105,10 @@ int main()
             cin >> newLinkedFile.name;
             cout << endl;
             newLinkedFile.start;
+            newLinkedFile.end;
             newLinkedFile.fillData();
+            cout << "Root For " << newLinkedFile.name << " is " << newLinkedFile.start;
+            cout << "End For " << newLinkedFile.name << " is " << newLinkedFile.end;
             for (int i = 0; i < memorySize; i++) {
                 if (newLinkedFile.data[0] == i || newLinkedFile.data[1] == i || newLinkedFile.data[2] == i || newLinkedFile.data[3] == i) {
                     memory[i] = "Filled with file " + newLinkedFile.name;
@@ -124,7 +128,10 @@ int main()
             cin >> newIndexedFile.name;
             cout << endl;
             newIndexedFile.start;
+            
             newIndexedFile.fillData();
+            cout << "Root For " << newIndexedFile.name << " is " << newIndexedFile.start;
+
             for (int i = 0; i < memorySize; i++) {
                 if (newIndexedFile.data[0] == i || newIndexedFile.data[1] == i || newIndexedFile.data[2] == i || newIndexedFile.data[3] == i) {
                     memory[i] = "Filled with file " + newIndexedFile.name;
