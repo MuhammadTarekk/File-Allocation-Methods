@@ -5,33 +5,33 @@ using namespace std;
 const int memorySize = 30;
 class contiguosFileAllocationMethod {
 
-    public:
-        string name;
-        int start= rand() % memorySize/2;
-        int size;
-        int end;
-        void getEndContiguos();
+public:
+    string name;
+    int start = rand() % memorySize / 2;
+    int size;
+    int end;
+    void getEndContiguos();
 };
-  
+
 class LinkedFileAllocationMethod {
-    public:
-        string name;
-        int start=rand() % memorySize / 2;
-        int data [4];
-        void fillData();
-        
+public:
+    string name;
+    int start = rand() % memorySize / 2;
+    int data[4];
+    void fillData();
+
 };
 
 class IndexedFileAllocationMethod {
-    public:
-        string name;
-        int start = rand() % memorySize / 2;
-        int data[4];
-        void fillData();
+public:
+    string name;
+    int start = rand() % memorySize / 2;
+    int data[4];
+    void fillData();
 };
 
 void contiguosFileAllocationMethod::getEndContiguos() {
-     end=start + size - 1;
+    end = start + size - 1;
 }
 
 void LinkedFileAllocationMethod::fillData() {
@@ -61,7 +61,7 @@ int main()
     fillArray(memory);
     do
     {
-        
+
         cout << "******* Welcome to the File Allocation Program ********\n";
         cout << "MENU:\n\nEnter 1 for Contigiuos File Allocation\n";
         cout << "Enter 2 for Linked File Allocation\n";
@@ -98,7 +98,7 @@ int main()
             }
         }
         else if (choice == 2) {
-           
+
             LinkedFileAllocationMethod newLinkedFile;
             cout << "Enter file Name : ";
             cin >> newLinkedFile.name;
